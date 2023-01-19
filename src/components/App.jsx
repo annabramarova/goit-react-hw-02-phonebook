@@ -2,6 +2,7 @@ import { Component } from "react";
 import { nanoid } from 'nanoid';
 import contacts from '../data/data.json';
 import ContactForm from './ContactForm'
+import ContactList from './ContactList';
 
 
 export class App extends Component {
@@ -11,7 +12,7 @@ export class App extends Component {
     filter: ''
   }
   
-  
+
 
     handleSubmit = e => {
     const id = nanoid();
@@ -28,6 +29,12 @@ export class App extends Component {
     this.setState({ contacts: contactsLists });
   };
 
+   handleDelete = e => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== e),
+    }));
+  };
+
   render() {
     return (
       <div
@@ -40,8 +47,14 @@ export class App extends Component {
           color: '#010101'
         }}
       >
-        <ContactForm  handleSubmit={this.handleSubmit}/>
-        React homework template
+        <h1>Phonebook</h1>
+        <ContactForm handleSubmit={this.handleSubmit} />
+        <h2> Contacts</h2>
+        {/* <Filter filter={filter} handleChange={this.handleChange} /> */}
+        <ContactList
+          // contacts={this.getFilteredContacts()}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   };
