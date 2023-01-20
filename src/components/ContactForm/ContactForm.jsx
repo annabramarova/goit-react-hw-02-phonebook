@@ -43,7 +43,7 @@ class ContactForm extends Component {
                             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         ></Input>
-                           <Error name="name" component="p"/>
+                            <Error name="name"/>
                     </Label>
                     <Label htmlFor="number">Number
                         <Input type='tel'
@@ -54,7 +54,7 @@ class ContactForm extends Component {
                             placeholder="Enter phone number..."
                             >
                         </Input>
-                        <Error name="number" component="p"/>
+                        <Error name="number"/>
                     </Label>
                     <Button type='submit'>Add contact</Button>
                 </FormStyled>
