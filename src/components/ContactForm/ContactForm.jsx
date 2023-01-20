@@ -26,6 +26,7 @@ class ContactForm extends Component {
 
     handleSubmit = (values, { resetForm }) => {
         console.log(values);
+        this.props.handleSubmit(values);
         resetForm();
     }
     
