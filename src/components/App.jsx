@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid';
 import contacts from '../data/data.json';
+import { Container, Title, ContactsList} from "./App.styled";
 import ContactForm from './ContactForm'
 import ContactList from './ContactList';
 
@@ -37,25 +38,16 @@ export class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101'
-        }}
-      >
-        <h1>Phonebook</h1>
+      <Container >
+        <Title>Phonebook</Title>
         <ContactForm handleSubmit={this.handleSubmit} />
-        <h2> Contacts</h2>
+        <ContactsList> Contacts</ContactsList>
         {/* <Filter filter={filter} handleChange={this.handleChange} /> */}
         <ContactList
           // contacts={this.getFilteredContacts()}
           handleDelete={this.handleDelete}
         />
-      </div>
+      </Container>
     );
   };
 }

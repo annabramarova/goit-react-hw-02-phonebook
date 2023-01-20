@@ -11,7 +11,6 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   display: flex;
-  align-items: center;
 `;
 
 const ListText = styled.p`
