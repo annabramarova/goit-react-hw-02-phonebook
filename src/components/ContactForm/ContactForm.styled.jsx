@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Field, Form } from 'formik';
+import { ErrorMessage, Field, Form } from 'formik';
 
 const FormStyled = styled(Form)`
 display: flex;
@@ -35,7 +35,14 @@ background: #f4f4f4;
 
      &:active{
     box-shadow:  inset 2px 2px 4px rgba(0, 0, 0, 0.15),
-    inset -2px -2px 4px rgba(0, 0, 0, 0.15);
+    inset -2px -2px 4px rgba(0, 0, 0, 0.15);}
 `
 
-export { Input, Button, FormStyled, Label };
+const Error = styled(ErrorMessage)`
+font-weight: 400;
+margin: 0;
+margin-top:10px;
+color: red;`
+
+
+export { Input, Button, FormStyled, Label, Error};
