@@ -6,8 +6,9 @@ const Container = styled.div`
             align-items: start;
             justify-content: center;
             margin: 0 auto;
+            padding: 0 20px;
             width: fit-content;
-            height: 100vh;
+            height: 100%;
             font-size: 40;
             
 
@@ -15,10 +16,13 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
+margin-top:2em;
 font-size: 40;
             color: #010101;`
 
 const ContactsList = styled.h2`
+margin-top: 2em;
 font-size: 40;
-            color: #010101;`
+color: #010101;`
+
 export { Container, Title, ContactsList};

@@ -4,6 +4,7 @@ import contacts from '../data/data.json';
 import { Container, Title, ContactsList} from "./App.styled";
 import ContactForm from './ContactForm'
 import ContactList from './ContactList';
+import Filter from "./Filter";
 
 
 export class App extends Component {
@@ -12,7 +13,11 @@ export class App extends Component {
     contacts: contacts,
     filter: ''
   }
-  
+
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
 
 
     handleSubmit = e => {
@@ -30,21 +35,33 @@ export class App extends Component {
     this.setState({ contacts: contactsLists });
   };
 
-   handleDelete = e => {
+  handleDelete = e => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== e),
     }));
   };
 
+  getFilteredContacts = () => {
+    const filterContactsList = this.state.contacts.filter(contact => {
+      return contact.name
+        .toLowerCase()
+        .includes(this.state.filter.toLowerCase());
+    });
+
+    return filterContactsList;
+  };
+
   render() {
-    return (
+    const { filter } = this.state;
+
+    return (      
       <Container >
         <Title>Phonebook</Title>
         <ContactForm handleSubmit={this.handleSubmit} />
         <ContactsList> Contacts</ContactsList>
-        {/* <Filter filter={filter} handleChange={this.handleChange} /> */}
+        <Filter filter={filter} handleChange={this.handleChange} />
         <ContactList
-          // contacts={this.getFilteredContacts()}
+          contacts={this.getFilteredContacts()}
           handleDelete={this.handleDelete}
         />
       </Container>
