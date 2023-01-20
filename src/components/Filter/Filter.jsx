@@ -4,7 +4,7 @@ import { FilterName, Label} from './Filter.styled'
 
 const Filter = ({ filter, handleChange }) => (
   <Fragment>
-    <Label>Find contacts by Name </Label>
+    <Label>Find contact by Name </Label>
     <FilterName
       type="text"
       name="filter"

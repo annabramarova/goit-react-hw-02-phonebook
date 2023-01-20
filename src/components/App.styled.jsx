@@ -8,6 +8,7 @@ const Container = styled.div`
             margin: 0 auto;
             padding: 0 20px;
             width: fit-content;
+            max-width: 480px;
             height: 100%;
             font-size: 40;
             

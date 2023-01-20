@@ -12,13 +12,9 @@ const ContactList = ({ contacts, handleDelete }) => (
     <List>
       {contacts.map(({ id, name, number }) => (
         <ListItem key={id}>
-          <div>
-            <ListText>{name}:</ListText>
-            <ListText>{number}</ListText>
-          </div>
-         <Button
-            type="button"
-            onClick={() => handleDelete(name.id)}
+            <ListText>{name}:  {number} </ListText>
+              <Button id={id} type="button"
+            onClick={handleDelete}
           >
             Delete
           </Button>
@@ -28,6 +24,7 @@ const ContactList = ({ contacts, handleDelete }) => (
   );
 
 
+export default ContactList;
 
 ContactList.defaultProps = {
   contacts: [],
@@ -37,11 +34,9 @@ ContactList.propTypes = {
   handleDelete: propTypes.func.isRequired,
   contacts: propTypes.arrayOf(
     propTypes.shape({
-      id: propTypes.string.isRequired,
-      name: propTypes.string.isRequired,
-      number: propTypes.string.isRequired,
+      id: propTypes.string,
+      name: propTypes.string,
+      number: propTypes.string,
     })
-  )
+  ).isRequired,
 };
-
-export default ContactList;

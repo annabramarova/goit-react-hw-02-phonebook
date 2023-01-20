@@ -4,7 +4,7 @@ const FilterName = styled.input`
   display: block;
 margin-top: 10px;
 padding: 12px 16px;
-width: 450px;
+width: 440px;
 font-size: 18px;
 color: gray;
 background-color: #fff;

@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 
 const List = styled.ul`
   display: flex;
-  width: 100%;
-  max-width: 480px;
   flex-direction: column;
+  align-items: stretch;
+  width:100%;
   gap: 8px;
   list-style: none;
   padding: 0;
@@ -13,22 +13,20 @@ const List = styled.ul`
 
 const ListItem = styled.li`
 display: flex;
+
 `;
 
 const ListText = styled.p`
-
-  display: inline-flex;
   margin:0;
-  
-  margin-right: 10px;
-  
-  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
+
 `;
 
 const Button = styled.button`
   cursor: pointer;
 padding: 8px 12px;
-width: 150px;
+width: 100px;
 color: #000;
 border-radius: 8px;
 font-weight: bold;

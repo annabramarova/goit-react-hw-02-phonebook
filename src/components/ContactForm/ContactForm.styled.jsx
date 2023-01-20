@@ -13,9 +13,9 @@ font-weight: bold;
 
 const Input = styled(Field)`
 display: block;
+width: 440px;
 margin-top: 10px;
 padding: 16px;
-width: 450px;
 font-size: 24px;
 color: gray;
 background-color: #fff;
