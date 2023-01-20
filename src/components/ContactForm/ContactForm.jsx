@@ -25,6 +25,7 @@ const schema = Yup.object().shape({
 class ContactForm extends Component {
 
     handleSubmit = (values, { resetForm }) => {
+        console.log(values);
         resetForm();
     }
     
