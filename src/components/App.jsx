@@ -25,7 +25,7 @@ export class App extends Component {
     const id = nanoid();
     const contactsLists = [...this.state.contacts];
 
-    if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
+    if (contactsLists.findIndex(contact => name.toLowerCase() === contact.name.toLowerCase() ) !== -1) {
     Notiflix.Notify.warning(`${name} is already in contacts.`);
     } else {
       contactsLists.push({ name, id, number });
