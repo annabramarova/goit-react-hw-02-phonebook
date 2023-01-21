@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {
   List,
@@ -31,12 +31,12 @@ ContactList.defaultProps = {
 };
 
 ContactList.propTypes = {
-  handleDelete: propTypes.func.isRequired,
-  contacts: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.string,
-      name: propTypes.string,
-      number: propTypes.string,
+  handleDelete: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

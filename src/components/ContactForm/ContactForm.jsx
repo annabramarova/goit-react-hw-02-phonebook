@@ -1,5 +1,5 @@
 import {Component} from "react";
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Formik} from "formik";
 import { Input, Button, FormStyled, Label, Error} from './ContactForm.styled'
@@ -66,7 +66,7 @@ class ContactForm extends Component {
 
 
 ContactForm.propTypes = {
-    handleSubmit: propTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
